@@ -4,9 +4,9 @@ export type TUserRole =
 | 'student'
 
 export type TUserStatus = 
-| 'active'
+| 'in-progress'
 | 'blocked'
 
 export const userRole: TUserRole[] = [ 'admin', 'faculty', 'student' ];
 
-export const userStatus: TUserStatus[] = [ 'active', 'blocked' ];
+export const userStatus: TUserStatus[] = [ 'in-progress', 'blocked' ];
