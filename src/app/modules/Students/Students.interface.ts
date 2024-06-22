@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { TGender } from "./Students.constant";
+import { TGender } from "../Constant/constant";
 
 export type TStudentName = {
     firstName: string;

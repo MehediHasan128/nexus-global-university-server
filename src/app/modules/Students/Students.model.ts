@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import { TGuardian, TLocalGuardian, TStudent, TStudentName } from "./Students.interface";
-import { Gender } from "./Students.constant";
+import { Gender } from "../Constant/constant";
 
 const studentNameSchema = new Schema<TStudentName>({
     firstName: {

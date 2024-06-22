@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Gender } from "./Students.constant";
+import { Gender } from "../Constant/constant";
 
 const studentNameValidationSchema = z.object({
     firstName: z.string({
