@@ -46,7 +46,6 @@ const localGuardianValidationSchema = z.object({
 
 
 const createStudentValidationSchema = z.object({
-    id: z.string(),
     name: studentNameValidationSchema,
     gender: z.enum([...Gender] as [string, ...string[]]),
     dateOfBirth: z.date({
@@ -70,7 +69,6 @@ const createStudentValidationSchema = z.object({
     guardian: guardianValidationSchema,
     localGuardian: localGuardianValidationSchema,
     profileImage: z.string().optional(),
-    isDeleted: z.boolean().default(false).optional()
 });
 
 
