@@ -5,57 +5,57 @@ import { Gender } from "./Students.constant";
 const studentNameSchema = new Schema<TStudentName>({
     firstName: {
         type: String,
-        required: [true, 'First name is required']
+        required: true
     },
     middleName: {
         type: String
     },
     lastName: {
         type: String,
-        required: [true, 'Last name is required']
+        required: true
     }
 });
 
 const guardianSchema = new Schema<TGuardian>({
     fatherName: {
         type: String,
-        required: [true, 'Father name is required']
+        required: true
     },
     fatherOccupation: {
         type: String,
-        required: [true, 'Father occupation is required']
+        required: true
     },
     fatherConatctNo: {
         type: String,
-        required: [true, 'Conatct number is required']
+        required: true
     },
 
     motherName: {
         type: String,
-        required: [true, 'Mother name is required']
+        required: true
     },
     motherOccupation: {
         type: String,
-        required: [true, 'Mother occupation is required']
+        required: true
     },
     motherConatctNo: {
         type: String,
-        required: [true, 'Conatct number is required']
+        required: true
     }
 })
 
 const localGuardianSchema = new Schema<TLocalGuardian>({
     name: {
         type: String,
-        required: [true, 'Name is required']
+        required: true
     },
     occupation: {
         type: String,
-        required: [true, 'Occupation is required']
+        required: true
     },
     contactNo: {
         type: String,
-        required: [true, 'Contact number is required']
+        required: true
     }
 });
 
@@ -72,44 +72,44 @@ const createStudentSchema = new Schema<TStudent>({
     },
     name: {
         type: studentNameSchema,
-        required: [true, 'Name field is required']
+        required: true
     },
     gender: {
         type: String,
         enum: Gender,
-        required: [true, 'Gender is required']
+        required: true
     },
     dateOfBirth: {
         type: Date,
-        required: [true, 'Date of birth is required']
+        required: true
     },
     email: {
         type: String,
-        required: [true, 'Email is required']
+        required: true
     },
     contactNo: {
         type: String,
-        required: [true, 'Contact number is required']
+        required: true
     },
     emergencyContactNo: {
         type: String,
-        required: [true, 'Emergency contact number is required']
+        required: true
     },
     presentAddress: {
         type: String,
-        required: [true, 'Present address is required']
+        required: true
     },
     parmanentAddress: {
         type: String,
-        required: [true, 'Parmanent address is required']
+        required: true
     },
     guardian: {
         type: guardianSchema,
-        required: [true, 'Guardian field is required']
+        required: true
     },
     localGuardian: {
         type: localGuardianSchema,
-        required: [true, 'Local guardian field is required']
+        required: true
     },
     profileImage: {
         type: String

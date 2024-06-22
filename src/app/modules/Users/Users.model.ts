@@ -8,8 +8,7 @@ const createUserSchema = new Schema<TUser>({
         required: true
     },
     password: {
-        type: String,
-        required: true
+        type: String
     },
     needsPasswordChange: {
         type: Boolean,
