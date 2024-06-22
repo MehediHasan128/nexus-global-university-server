@@ -13,6 +13,19 @@ const createStudent = async(req: Request, res: Response) =>{
 };
 
 
+const createFaculty = async(req: Request, res: Response) =>{
+    const {password, faculty} = req.body;
+    const result = await UserServices.createFacultyIntoDB(password, faculty);
+
+    res.send({
+        success: true,
+        statusCode: 200,
+        data: result
+    })
+};
+
+
 export const UserController = {
-    createStudent
+    createStudent,
+    createFaculty
 }
