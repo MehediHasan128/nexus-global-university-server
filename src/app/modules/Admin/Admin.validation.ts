@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { Gender } from "../Constant/constant";
 
-const facultyNameValidationSchema = z.object({
+const adminNameValidationSchema = z.object({
     firstName: z.string({
         required_error: 'First name is required'
     }),
@@ -11,8 +11,8 @@ const facultyNameValidationSchema = z.object({
     })
 });
 
-const createFacultyValidationSchema = z.object({
-    name: facultyNameValidationSchema,
+const createAdminValidationSchema = z.object({
+    name: adminNameValidationSchema,
     gender: z.enum([...Gender] as [string, ...string[]]),
     dateOfBirth: z.date({
          required_error: 'Date of birth is required'
@@ -36,6 +36,6 @@ const createFacultyValidationSchema = z.object({
 });
 
 
-export const facultyValidation = {
-    createFacultyValidationSchema
+export const adminValidation = {
+    createAdminValidationSchema
 }

@@ -31,9 +31,7 @@ const createStudentIntoDB = async (password: string, payload: TStudent) => {
   return newStudent;
 };
 
-
-
-const createFacultyIntoDB = async(password: string, payload: TFaculty) =>{
+const createFacultyIntoDB = async (password: string, payload: TFaculty) => {
   const userData: Partial<TUser> = {};
 
   // set password
@@ -56,9 +54,9 @@ const createFacultyIntoDB = async(password: string, payload: TFaculty) =>{
   const newFaculty = await Faculty.create(payload);
 
   return newFaculty;
-}
+};
 
 export const UserServices = {
   createStudentIntoDB,
-  createFacultyIntoDB
+  createFacultyIntoDB,
 };

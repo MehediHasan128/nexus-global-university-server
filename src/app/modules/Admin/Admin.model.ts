@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
-import { TFaculty, TFacultyName } from './Faculty.interface';
 import { Gender } from '../Constant/constant';
+import { TAdmin, TAdminName } from './Admin.interface';
 
-const facultyNameSchema = new Schema<TFacultyName>({
+const adminNameSchema = new Schema<TAdminName>({
   firstName: {
     type: String,
     required: true,
@@ -16,7 +16,7 @@ const facultyNameSchema = new Schema<TFacultyName>({
   },
 });
 
-const createFacultySchema = new Schema<TFaculty>(
+const createAdminSchema = new Schema<TAdmin>(
   {
     id: {
       type: String,
@@ -28,7 +28,7 @@ const createFacultySchema = new Schema<TFaculty>(
       required: true,
     },
     name: {
-      type: facultyNameSchema,
+      type: adminNameSchema,
       required: true,
     },
     gender: {
@@ -73,4 +73,4 @@ const createFacultySchema = new Schema<TFaculty>(
   },
 );
 
-export const Faculty = model<TFaculty>('Faculties', createFacultySchema);
+export const Admin = model<TAdmin>('Admin', createAdminSchema);
