@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import router from './app/Routes';
 import { globalErrorHandler } from './app/middlwares/globalErrorHandler';
+import { notFound } from './app/middlwares/notFound';
 const app = express();
 
 // Parser
@@ -17,5 +18,8 @@ app.get('/', (req, res) => {
 
 // Add global error handlear
 app.use(globalErrorHandler);
+
+// Not Found
+app.use(notFound);
 
 export default app;
