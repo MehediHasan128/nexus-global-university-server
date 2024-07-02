@@ -8,6 +8,7 @@ const createStudent = async(req: Request, res: Response) =>{
     res.send({
         success: true,
         statusCode: 200,
+        message: 'Student create successfully',
         data: result
     })
 };
@@ -20,12 +21,27 @@ const createFaculty = async(req: Request, res: Response) =>{
     res.send({
         success: true,
         statusCode: 200,
+        message: 'Faculty create successfully',
         data: result
     })
 };
 
 
+const createAdmin = async(req: Request, res: Response) =>{
+    const {password, admin} = req.body;
+    const result = await UserServices.createAdminIntoDB(password, admin);
+
+    res.send({
+        success: true,
+        statusCode: 200,
+        message: 'Admin create successfully',
+        data: result
+    })
+}
+
+
 export const UserController = {
     createStudent,
-    createFaculty
+    createFaculty,
+    createAdmin
 }
