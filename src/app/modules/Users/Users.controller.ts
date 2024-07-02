@@ -1,63 +1,43 @@
-import { NextFunction, Request, Response } from 'express';
 import { UserServices } from './Users.services';
 import { sendResponce } from '../../../util/sendResponce';
 import httpStatus from 'http-status';
+import { catchAsync } from '../../../util/catchAsync';
 
-const createStudent = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
-  try {
-    const { password, student } = req.body;
-    const result = await UserServices.createStudentIntoDB(password, student);
+const createStudent = catchAsync(async (req, res) => {
+  const { password, student } = req.body;
+  const result = await UserServices.createStudentIntoDB(password, student);
 
-    sendResponce(res, {
-      success: true,
-      statusCode: httpStatus.OK,
-      message: 'Student create successfully',
-      data: result,
-    });
-  } catch (err) {
-    next(err);
-  }
-};
+  sendResponce(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Student create successfully',
+    data: result,
+  });
+});
 
-const createFaculty = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
-  try {
-    const { password, faculty } = req.body;
-    const result = await UserServices.createFacultyIntoDB(password, faculty);
+const createFaculty = catchAsync(async (req, res) => {
+  const { password, faculty } = req.body;
+  const result = await UserServices.createFacultyIntoDB(password, faculty);
 
-    sendResponce(res, {
-      success: true,
-      statusCode: httpStatus.OK,
-      message: 'Faculty create successfully',
-      data: result,
-    });
-  } catch (err) {
-    next(err);
-  }
-};
+  sendResponce(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Faculty create successfully',
+    data: result,
+  });
+});
 
-const createAdmin = async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const { password, admin } = req.body;
-    const result = await UserServices.createAdminIntoDB(password, admin);
+const createAdmin = catchAsync(async (req, res) => {
+  const { password, admin } = req.body;
+  const result = await UserServices.createAdminIntoDB(password, admin);
 
-    sendResponce(res, {
-      success: true,
-      statusCode: httpStatus.OK,
-      message: 'Admin create successfully',
-      data: result,
-    });
-  } catch (err) {
-    next(err);
-  }
-};
+  sendResponce(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Admin create successfully',
+    data: result,
+  });
+});
 
 export const UserController = {
   createStudent,
