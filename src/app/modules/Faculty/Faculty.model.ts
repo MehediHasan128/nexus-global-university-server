@@ -37,7 +37,7 @@ const createFacultySchema = new Schema<TFaculty>(
       required: true,
     },
     dateOfBirth: {
-      type: Date,
+      type: String,
       required: true,
     },
     email: {
