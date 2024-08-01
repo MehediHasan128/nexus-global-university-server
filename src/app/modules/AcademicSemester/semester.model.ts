@@ -32,4 +32,18 @@ const academicSemesterSchema = new Schema<TAcademicSemester>({
 })
 
 
-export const academicSemester = model<TAcademicSemester>('semester', academicSemesterSchema)
+academicSemesterSchema.pre('save', async function (next) {
+    const isSemesterExist = await academicSemester.findOne({
+        year: this.year,
+        semesterName: this.semesterName
+    });
+
+    if(isSemesterExist){
+        throw new Error('Semester is already exist')
+    }
+
+    next();
+})
+
+
+export const academicSemester = model<TAcademicSemester>('AcademicSemester', academicSemesterSchema)
