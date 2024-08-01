@@ -15,4 +15,4 @@ export const sendResponce = <T>(res: Response, resData: TResponce<T>) =>{
         message: resData.message,
         data: resData.data
     })
-}
+} 
